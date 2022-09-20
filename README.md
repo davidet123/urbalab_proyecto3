@@ -24,3 +24,6 @@ Hay diferentes opciones para descuentos o sobrecargos a la hora del checkout.
 
 Una vez realizado el checkout, el sitio permanecerá inaccesible para el usuario como medida de "protección"
 
+## Persistencia de los datos
+
+Los datos se almacenarán en localstore.
