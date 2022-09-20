@@ -125,3 +125,16 @@ body{
   cursor: pointer;
   font-weight: bold;
 }
+
+/* Página aplicación */
+
+.aplicacion {
+  display: none;
+  /* display: none; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: yellow;
+}
