@@ -1,21 +1,30 @@
-const boton = document.getElementById("boton1")
-const botonEnviar = document.getElementById("enviarForm")
+// Funcionalidad pasar páginas
 
-let inicio = document.getElementsByClassName("web-inicio")
-let formulario = document.getElementsByClassName("login-page")
-let aplicacion = document.getElementsByClassName("aplicacion")
+// Botones
+const boton = document.getElementById("boton1");
+const botonEnviar = document.getElementById("enviarForm");
 
-boton.addEventListener("click", e => {
+// Referencias a contenedor de cada página
+
+let inicio = document.getElementById("web-inicio");
+let formulario = document.getElementById("login-page");
+let aplicacion = document.getElementById("aplicacion");
+
+// Esconder inicio y mostrar formulario acceso
+
+boton.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log(inicio)
-  inicio[0].style.display = "none"
-  formulario[0].style.display = "flex"
+  inicio.classList.add("hide");
+  formulario.classList.add("show");
+});
 
-})
+// Esconder formulario y mostrar la aplicación
 
-botonEnviar.addEventListener("click", e => {
+botonEnviar.addEventListener("click", (e) => {
   e.preventDefault();
-  formulario[0].style.display = "none"
-  aplicacion[0].style.display = "flex"
+  formulario.classList.remove("show");
+  aplicacion.classList.add("show");
+});
 
-})
+
+console.log("test")
