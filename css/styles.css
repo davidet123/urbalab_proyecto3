@@ -125,6 +125,17 @@ body {
 
 /* Página aplicación */
 
+#info {
+  position: absolute;
+  display: none;
+  width: 180px;
+  height: 60px;
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: orange;
+}
+
 #aplicacion {
   display: flex;
   flex-direction: column;
