@@ -27,8 +27,6 @@ botonEnviar.addEventListener("click", (e) => {
 });
 
 
-
-
 // Event listener para items compra
  let items = document.querySelectorAll(".item-compra")
 
@@ -56,6 +54,8 @@ botonEnviar.addEventListener("click", (e) => {
   })
  });
 
+
+ /* Etiqueta info */
  items.forEach(item => {
   item.addEventListener("mousemove", (e) => {
     info.style.left = `${e.x  + offsetX}px`
@@ -70,13 +70,16 @@ botonEnviar.addEventListener("click", (e) => {
   })
  });
 
-
+/* Añadir imágenes */
  let posicion = 1
   items.forEach(item => {
-    let nuevoItem = document.createElement("img")
-    nuevoItem.setAttribute("src", "img/item.png")
-    nuevoItem.setAttribute("id", `itemCompra${posicion}`)
-    item.appendChild(nuevoItem)
+
+    let persona = document.createElement("img");
+    persona.setAttribute("src", "img/persona.png");
+    persona.setAttribute("id", `itemCompra${posicion}`);
+    persona.setAttribute("draggable", "true")
+    persona.setAttribute("alt", "persona")
+    item.appendChild(persona);
     posicion ++
   })
 
@@ -85,10 +88,11 @@ botonEnviar.addEventListener("click", (e) => {
 
  items.forEach(item => {
   item.addEventListener("dragstart", e => {
-    console.log(e)
     info.style.display = "none";
     e.dataTransfer.setData("text", e.target.id)
-    console.log(e.target.id)
+    elemento = document.getElementById(e.target.id)
+    /* elemento.style.display="none" */
+    /* elemento.style.visibility="hidden" */
   })
  });
 
@@ -99,8 +103,8 @@ botonEnviar.addEventListener("click", (e) => {
  };
  const soltarItem = e => {
   e.preventDefault();
-
   let item = data = e.dataTransfer.getData("text");
+  document.getElementById(item).style.visibility ="hidden"
   console.log(item)
 
  }

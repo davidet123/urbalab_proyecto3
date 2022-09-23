@@ -205,8 +205,35 @@ body {
 .item-compra {
   width: 50px;
   height: 50px;
-  background-color: brown;
+  display:block;
+  /* background-color: brown; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
 }
+
+.item-top {
+  background-image: url(../img/silla.png);
+  
+}
+.item-left  {
+  transform: rotate(270deg);
+  background-image: url(../img/silla.png);
+  
+}
+
+.item-right {
+  transform: rotate(90deg);
+  background-image: url(../img/silla.png);
+}
+.item-bottom  {
+  transform: rotate(180deg);
+  background-image: url(../img/silla.png);
+}
+
+
 .mesa {
   width: 70%;
   height: 6em;
