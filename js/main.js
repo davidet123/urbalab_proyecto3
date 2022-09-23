@@ -32,20 +32,26 @@ botonEnviar.addEventListener("click", (e) => {
 // Event listener para items compra
  let items = document.querySelectorAll(".item-compra")
 
+ // Ventana información
  let info = document.getElementById("info");
- let textoInfo = document.querySelector("#info p")
 
+ // Seleccionar todos los items
+ let textoInfo = document.querySelector("#info")
 
+// Offset para la ventana de info
  const offsetX = 20;
  const offsetY = 10;
 
+ // Seleccionar carrito
+ let carrito = document.getElementById("carrito")
+
+
  items.forEach(item => {
   item.addEventListener("mouseover", (e) => {
-    console.log(e)
     info.style.display="block"
     info.style.left = `${e.x + offsetX}px`
     info.style.top = `${e.y+ offsetY}px`
-    textoInfo.innerHTML = `${e.x + offsetX}px`
+    textoInfo.innerHTML = `<p>Posición X${e.x + offsetX}px</p><p>Posición Y${e.y + offsetX}px</p>`
     /* info.style.left = e.clientX  */
   })
  });
@@ -54,17 +60,35 @@ botonEnviar.addEventListener("click", (e) => {
   item.addEventListener("mousemove", (e) => {
     info.style.left = `${e.x  + offsetX}px`
     info.style.top = `${e.y  + offsetY}px`
+    
   })
  });
 
  items.forEach(item => {
   item.addEventListener("mouseleave", (e) => {
-    console.log(e)
     info.style.display="none"
   })
  });
 
- // Mostrar ventana info al pasar el cursor por encima del elemento
+ items.forEach(item => {
+  item.addEventListener("dragstart", e => {
+    console.log(e)
+    info.style.display = "none"
+  })
+ });
 
-
+ carrito,addEventListener("dragenter", e => {
+  e.preventDefault();
+  console.log("dragenter")
+ })
+ 
+let posicion = 1
+items.forEach(item => {
+  let nuevoItem = document.createElement("img")
+  nuevoItem.setAttribute("src", "img/item.png")
+  nuevoItem.setAttribute("key", `itemCompra${posicion}`)
+  item.appendChild(nuevoItem)
+  posicion ++
+  console.log(item)
+})
 
