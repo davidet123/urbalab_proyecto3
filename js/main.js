@@ -70,25 +70,44 @@ botonEnviar.addEventListener("click", (e) => {
   })
  });
 
+
+ let posicion = 1
+  items.forEach(item => {
+    let nuevoItem = document.createElement("img")
+    nuevoItem.setAttribute("src", "img/item.png")
+    nuevoItem.setAttribute("id", `itemCompra${posicion}`)
+    item.appendChild(nuevoItem)
+    posicion ++
+  })
+
+
+
+
  items.forEach(item => {
   item.addEventListener("dragstart", e => {
     console.log(e)
-    info.style.display = "none"
+    info.style.display = "none";
+    e.dataTransfer.setData("text", e.target.id)
+    console.log(e.target.id)
   })
  });
 
- carrito,addEventListener("dragenter", e => {
+
+
+ const permitirDrop = e => {
   e.preventDefault();
-  console.log("dragenter")
- })
- 
-let posicion = 1
-items.forEach(item => {
-  let nuevoItem = document.createElement("img")
-  nuevoItem.setAttribute("src", "img/item.png")
-  nuevoItem.setAttribute("key", `itemCompra${posicion}`)
-  item.appendChild(nuevoItem)
-  posicion ++
+ };
+ const soltarItem = e => {
+  e.preventDefault();
+
+  let item = data = e.dataTransfer.getData("text");
   console.log(item)
-})
+
+ }
+
+ /* carrito,addEventListener("dragover", e => {
+  e.preventDefault();
+  console.log("dragover")
+ }) */
+ 
 

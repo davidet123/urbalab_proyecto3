@@ -48,26 +48,26 @@
       <div class="aplicacion-principal">
         <div class="seleccion">
           <div class="fila fila1">
-            <div draggable="true" class="item-compra item-top"></div>
-            <div draggable="true" class="item-compra item-top"></div>
-            <div draggable="true" class="item-compra item-top"></div>
-            <div draggable="true" class="item-compra item-top"></div>
-            <div draggable="true" class="item-compra item-top"></div>
+            <div class="item-compra item-top"></div>
+            <div class="item-compra item-top"></div>
+            <div class="item-compra item-top"></div>
+            <div class="item-compra item-top"></div>
+            <div class="item-compra item-top"></div>
           </div>
           <div class="fila fila2">
-            <div draggable="true" class="item-compra item-left"></div>
+            <div class="item-compra item-left"></div>
             <div class="mesa"></div>
-            <div draggable="true" class="item-compra item-right"></div>
+            <div class="item-compra item-right"></div>
           </div>
           <div class="fila fila3">
-            <div draggable="true" class="item-compra item-bottom"></div>
-            <div draggable="true" class="item-compra item-bottom"></div>
-            <div draggable="true" class="item-compra item-bottom"></div>
-            <div draggable="true" class="item-compra item-bottom"></div>
-            <div draggable="true" class="item-compra item-bottom"></div>
+            <div class="item-compra item-bottom"></div>
+            <div class="item-compra item-bottom"></div>
+            <div class="item-compra item-bottom"></div>
+            <div class="item-compra item-bottom"></div>
+            <div class="item-compra item-bottom"></div>
           </div>
         </div>
-        <div id="carrito"></div>
+        <div id="carrito" ondrop="soltarItem(event)" ondragover="permitirDrop(event)"></div>
 
       </div>
 
