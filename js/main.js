@@ -54,7 +54,6 @@ botonEnviar.addEventListener("click", (e) => {
       return el.id == elementoId
     })
     textoInfo.innerHTML = `<p>${objetoSeleccionado.cargo + " " + objetoSeleccionado.nombre }</p><p>Precio ${objetoSeleccionado.precio}$</p>`;
-    /* info.style.left = e.clientX  */
   })
  });
 
@@ -102,13 +101,28 @@ botonEnviar.addEventListener("click", (e) => {
  const permitirDrop = e => {
   e.preventDefault();
  };
+
+let carritoArray = [];
+
  const soltarItem = e => {
   e.preventDefault();
   let item = data = e.dataTransfer.getData("text");
   document.getElementById(item).style.visibility ="hidden";
+  carritoArray.push(itemArray.find(e => e.id = item))
+  localStorage.setItem("carritoArray", JSON.stringify(carritoArray))
+
  }
  /* carrito,addEventListener("dragover", e => {
   e.preventDefault();
   console.log("dragover");
  }) */
  
+
+ // Vaciar carrito
+
+const vaciarCarrito = () => {
+  let items = document.querySelectorAll(".item-compra img")
+  items.forEach(item => {
+    item.removeAttribute("style")
+  })
+}
