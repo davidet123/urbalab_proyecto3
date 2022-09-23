@@ -1,19 +1,19 @@
 let itemArray = [
   {
     id: "itemCompra1",
-    nombre: "Soy el item01",
+    nombre: "Pepet",
     cargo: "Secretario",
     precio: "3000"
   },
   {
     id: "itemCompra2",
-    nombre: "Soy el item02",
+    nombre: "Antonio",
     cargo: "Presidente",
     precio: "4000"
   },
   {
     id: "itemCompra3",
-    nombre: "Soy el item01",
+    nombre: "Jorge",
     cargo: "Secretario",
     precio: "3000"
   },

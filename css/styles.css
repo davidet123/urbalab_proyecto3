@@ -126,14 +126,18 @@ body {
 /* Página aplicación */
 
 #info {
-  position: absolute;
   display: none;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 180px;
   height: 60px;
-  padding: 1em;
+  padding: 2em;
   border: 1px solid black;
   border-radius: 10px;
   background-color: orange;
+  z-index: 100;
 }
 
 #aplicacion {

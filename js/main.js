@@ -28,28 +28,32 @@ botonEnviar.addEventListener("click", (e) => {
 
 
 // Event listener para items compra
- let items = document.querySelectorAll(".item-compra")
+ let items = document.querySelectorAll(".item-compra");
 
  // Ventana información
  let info = document.getElementById("info");
 
  // Seleccionar todos los items
- let textoInfo = document.querySelector("#info")
+ let textoInfo = document.querySelector("#info");
 
 // Offset para la ventana de info
  const offsetX = 20;
  const offsetY = 10;
 
  // Seleccionar carrito
- let carrito = document.getElementById("carrito")
+ let carrito = document.getElementById("carrito");
 
 
  items.forEach(item => {
   item.addEventListener("mouseover", (e) => {
-    info.style.display="block"
-    info.style.left = `${e.x + offsetX}px`
-    info.style.top = `${e.y+ offsetY}px`
-    textoInfo.innerHTML = `<p>Posición X${e.x + offsetX}px</p><p>Posición Y${e.y + offsetX}px</p>`
+    info.style.display="flex";
+    info.style.left = `${e.x + offsetX}px`;
+    info.style.top = `${e.y+ offsetY}px`;
+    let elementoId = item.firstChild.id;
+    let objetoSeleccionado = itemArray.find(el => {
+      return el.id == elementoId
+    })
+    textoInfo.innerHTML = `<p>${objetoSeleccionado.cargo + " " + objetoSeleccionado.nombre }</p><p>Precio ${objetoSeleccionado.precio}$</p>`;
     /* info.style.left = e.clientX  */
   })
  });
@@ -58,45 +62,42 @@ botonEnviar.addEventListener("click", (e) => {
  /* Etiqueta info */
  items.forEach(item => {
   item.addEventListener("mousemove", (e) => {
-    info.style.left = `${e.x  + offsetX}px`
-    info.style.top = `${e.y  + offsetY}px`
-    
+    info.style.left = `${e.x  + offsetX}px`;
+    info.style.top = `${e.y  + offsetY}px`;
+    /* console.log(item.firstChild.id) */
   })
  });
 
  items.forEach(item => {
   item.addEventListener("mouseleave", (e) => {
-    info.style.display="none"
+    info.style.display="none";
   })
  });
 
 /* Añadir imágenes */
  let posicion = 1
   items.forEach(item => {
-
     let persona = document.createElement("img");
     persona.setAttribute("src", "img/persona.png");
     persona.setAttribute("id", `itemCompra${posicion}`);
-    persona.setAttribute("draggable", "true")
-    persona.setAttribute("alt", "persona")
+    persona.setAttribute("draggable", "true");
+    persona.setAttribute("alt", "persona");
     item.appendChild(persona);
-    posicion ++
+    posicion ++;
   })
 
 
-
+/* DRAG & DROP */
 
  items.forEach(item => {
   item.addEventListener("dragstart", e => {
     info.style.display = "none";
-    e.dataTransfer.setData("text", e.target.id)
-    elemento = document.getElementById(e.target.id)
+    e.dataTransfer.setData("text", e.target.id);
+    elemento = document.getElementById(e.target.id);
     /* elemento.style.display="none" */
     /* elemento.style.visibility="hidden" */
   })
  });
-
-
 
  const permitirDrop = e => {
   e.preventDefault();
@@ -104,14 +105,10 @@ botonEnviar.addEventListener("click", (e) => {
  const soltarItem = e => {
   e.preventDefault();
   let item = data = e.dataTransfer.getData("text");
-  document.getElementById(item).style.visibility ="hidden"
-  console.log(item)
-
+  document.getElementById(item).style.visibility ="hidden";
  }
-
  /* carrito,addEventListener("dragover", e => {
   e.preventDefault();
-  console.log("dragover")
+  console.log("dragover");
  }) */
  
-
