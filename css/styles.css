@@ -261,7 +261,7 @@ body {
   justify-content: center;
 }
 
-.precio-total {
+#precio-total {
   color: white;
   font-size: 2em;
   font-weight: bold;;

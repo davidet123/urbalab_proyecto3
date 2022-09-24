@@ -113,7 +113,6 @@ items.forEach((item) => {
 // Seleccionar bolsillo para cambiar imagen
 
 let bolsillo = document.getElementById("bolsillo-img")
-console.log(bolsillo)
 
 
 items.forEach((item) => {
@@ -132,11 +131,20 @@ const permitirDrop = (e) => {
   e.preventDefault();
 };
 
+let textoPrecio = document.querySelector("#precio-total p")
+
 const soltarItem = (e) => {
   e.preventDefault();
   let item = e.dataTransfer.getData("text");
   document.getElementById(item).style.visibility = "hidden";
   let itemArrastrado = itemArray.find((e) => (e.id == item));
+
+  /* Añadir precio */ 
+
+  console.log(itemArrastrado)
+  console.log(itemArrastrado.precio)
+  totalCarrito += itemArrastrado.precio;
+  textoPrecio.innerHTML = `${totalCarrito} $`
   carritoArray.push(itemArrastrado)
   itemArrastrado.disponible = false;
   localStorage.setItem("carritoArray", JSON.stringify(carritoArray));
@@ -153,5 +161,6 @@ const vaciarCarrito = () => {
   itemArray.forEach(item => {
     item.disponible = true
   });
+  textoPrecio.innerHTML = "0 $"
   localStorage.removeItem("carritoArray");
 };
