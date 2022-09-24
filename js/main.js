@@ -2,6 +2,15 @@
 let totalCarrito = 0;
 
 
+// Inicializar datos en la aplicación
+let datosAlmacenados = JSON.parse(localStorage.getItem("carritoArray"))
+console.log(datosAlmacenados)
+let carritoArray = datosAlmacenados ? [...datosAlmacenados] : [];
+//let carritoArray = [];
+
+
+
+
 // Funcionalidad pasar páginas
 
 // Botones
@@ -86,11 +95,19 @@ items.forEach((item) => {
 let posicion = 1;
 items.forEach((item) => {
   let persona = document.createElement("img");
+  let id = `itemCompra${posicion}`
   persona.setAttribute("src", "img/persona.png");
-  persona.setAttribute("id", `itemCompra${posicion}`);
+  persona.setAttribute("id", id);
   persona.setAttribute("draggable", "true");
   persona.setAttribute("alt", "persona");
   item.appendChild(persona);
+
+  // Check si el elemento está en el array
+  if(carritoArray.find(el => el.id === id)) {
+    persona.style.visibility= "hidden"
+  }
+
+
   posicion++;
 });
 
@@ -111,15 +128,16 @@ const permitirDrop = (e) => {
   e.preventDefault();
 };
 
-let carritoArray = [];
+
 
 const soltarItem = (e) => {
   e.preventDefault();
   let item = e.dataTransfer.getData("text");
+  console.log("item al arrstrar", item)
   document.getElementById(item).style.visibility = "hidden";
   let itemArrastrado = itemArray.find((e) => (e.id == item));
 
-    carritoArray.push(itemArrastrado)
+  carritoArray.push(itemArrastrado)
   itemArrastrado.disponible = false;
   localStorage.setItem("carritoArray", JSON.stringify(carritoArray));
 };
