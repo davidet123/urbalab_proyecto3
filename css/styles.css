@@ -247,7 +247,27 @@ body {
 }
 
 #carrito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 35%;
   height: 80%;
-  background-color: blue;;
+  
+}
+.bolsillo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.precio-total {
+  color: white;
+  font-size: 2em;
+  font-weight: bold;;
+}
+.bolsillo img{
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
 }

@@ -69,8 +69,14 @@
             <div class="item-compra item-bottom"></div>
           </div>
         </div>
-        <div id="carrito" ondrop="soltarItem(event)" ondragover="permitirDrop(event)">
-        <button onclick="vaciarCarrito()">TEST</button>
+        <div id="carrito">
+          <div class="bolsillo">
+            <img id="bolsillo-img" ondrop="soltarItem(event)" ondragover="permitirDrop(event)" src="img/bolsillo-cerrado.png" alt="Bolsillo cerrado">
+          </div>
+          <div class="precio-total">
+            <p>200€</p>
+          </div>
+        <button onclick="vaciarCarrito()">RESET</button>
         </div>
 
       </div>
