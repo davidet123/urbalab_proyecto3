@@ -1,3 +1,7 @@
+/* VARIABLES GLOBALES */
+let totalCarrito = 0;
+
+
 // Funcionalidad pasar páginas
 
 // Botones
@@ -45,18 +49,22 @@ let carrito = document.getElementById("carrito");
 
 // Mostrar etiqueta info
 items.forEach((item) => {
+
   item.addEventListener("mouseover", (e) => {
-    console.log(item.firstChild.id)
-    info.style.display = "flex";
-    info.style.left = `${e.x + offsetX}px`;
-    info.style.top = `${e.y + offsetY}px`;
     let elementoId = item.firstChild.id;
     let objetoSeleccionado = itemArray.find((el) => {
       return el.id == elementoId;
     });
-    textoInfo.innerHTML = `<p>${
-      objetoSeleccionado.cargo + " " + objetoSeleccionado.nombre
-    }</p><p>Precio ${objetoSeleccionado.precio}$</p>`;
+
+    if (objetoSeleccionado.disponible) {
+
+      info.style.display = "flex";
+      info.style.left = `${e.x + offsetX}px`;
+      info.style.top = `${e.y + offsetY}px`;
+      textoInfo.innerHTML = `<p>${
+        objetoSeleccionado.cargo + " " + objetoSeleccionado.nombre
+      }</p><p>Precio ${objetoSeleccionado.precio}$</p>`;
+    }
   });
 });
 
@@ -65,7 +73,6 @@ items.forEach((item) => {
   item.addEventListener("mousemove", (e) => {
     info.style.left = `${e.x + offsetX}px`;
     info.style.top = `${e.y + offsetY}px`;
-    console.log(item.firstChild.id)
   });
 });
 
@@ -96,7 +103,7 @@ items.forEach((item) => {
     /* elemento = document.getElementById(e.target.id); */
     /* elemento.style.display="none" */
     /* elemento.style.visibility="hidden" */
-    console.log(itemArray);
+
   });
 });
 
@@ -113,15 +120,9 @@ const soltarItem = (e) => {
   let itemArrastrado = itemArray.find((e) => (e.id == item));
 
     carritoArray.push(itemArrastrado)
-  /* console.log(carritoArray) */
-  console.log(itemArray);
   itemArrastrado.disponible = false;
   localStorage.setItem("carritoArray", JSON.stringify(carritoArray));
 };
-/* carrito,addEventListener("dragover", e => {
-  e.preventDefault();
-  console.log("dragover");
- }) */
 
 // Vaciar carrito
 
@@ -129,6 +130,9 @@ const vaciarCarrito = () => {
   let items = document.querySelectorAll(".item-compra img");
   items.forEach((item) => {
     item.removeAttribute("style");
+  });
+  itemArray.forEach(item => {
+    item.disponible = true
   });
   localStorage.removeItem("carritoArray");
 };

@@ -85,4 +85,3 @@ const itemArray = [
   }
 ]
 
-console.log(itemArray)
