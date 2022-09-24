@@ -6,6 +6,14 @@ let totalCarrito = 0;
 let datosAlmacenados = JSON.parse(localStorage.getItem("carritoArray"))
 let carritoArray = datosAlmacenados ? [...datosAlmacenados] : [];
 
+carritoArray.forEach(el => {
+  totalCarrito += el.precio
+})
+
+let textoPrecio = document.querySelector("#precio-total p")
+textoPrecio.innerHTML = `${totalCarrito} $`
+
+
 
 
 
@@ -131,7 +139,7 @@ const permitirDrop = (e) => {
   e.preventDefault();
 };
 
-let textoPrecio = document.querySelector("#precio-total p")
+
 
 const soltarItem = (e) => {
   e.preventDefault();
