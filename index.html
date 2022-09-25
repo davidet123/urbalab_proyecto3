@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TONGO</title>
-
+    
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/inicio.css" />
+    <link rel="stylesheet" href="css/carga.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/aplicacion.css" />
   </head>
   <body>
     <!-- Página inicio -->
@@ -24,25 +28,38 @@
       <div class="web-inicio-action">
         <button id="boton1">Click</button>
       </div>
-      <!-- Página login -->
     </div>
+    <!-- Página login -->
     <div id="login-page">
       <form class="login-form">
         <h3>Login</h3>
         <div class="inputs">
-          <input type="text" placeholder="test1" id="mail" />
-          <input type="password" placeholder="test1" id="password" />
+          <input type="text" placeholder="Enter your name" id="mail" />
+          <input type="password" placeholder="Password" id="password" />
         </div>
         <div class="actions">
           <button type="submit" id="enviarForm">Enviar</button>
         </div>
       </form>
     </div>
+
+    <!-- Loading screen -->
+    <div id="loading-screen">
+      <div class="caja-carga">
+        <div class="encima">
+          <div class="barra-carga" style="width: 0%"></div>
+        </div>
+      </div>
+      <div class="porcentaje-carga">Loading...</div>
+    </div>
+
+
     <!-- Aplicación -->
-    <div id="aplicacion">
+    <div id="aplicacion" class="hide">
       <div class="titulo">T.O.N.G.O.</div>
       <!-- Caja información cuando mouseover -->
       <div id="info">
+        <p>Pepet</p>
         <p>Pepet</p>
         <p>1200$</p>
       </div>
@@ -84,6 +101,7 @@
 
     </div>
 
+    <script src="js/cargando.js"></script>
     <script src="js/items.js"></script>
     <script src="js/main.js"></script>
   </body>

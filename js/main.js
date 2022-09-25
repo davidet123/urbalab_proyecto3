@@ -27,6 +27,7 @@ const botonEnviar = document.getElementById("enviarForm");
 
 let inicio = document.getElementById("web-inicio");
 let formulario = document.getElementById("login-page");
+let cargando = document.getElementById("loading-screen");
 let aplicacion = document.getElementById("aplicacion");
 
 // Esconder inicio y mostrar formulario acceso
@@ -42,8 +43,28 @@ boton.addEventListener("click", (e) => {
 botonEnviar.addEventListener("click", (e) => {
   e.preventDefault();
   formulario.classList.remove("show");
-  aplicacion.classList.add("show");
+  formulario.classList.add("hide");
+  cargando.classList.add("show");
+  Carga();
 });
+
+
+
+
+// Abrir Aplicación
+
+const AbrirAplicacion = () => {
+  cargando.classList.remove("show");
+  cargando.classList.add("hide");
+  aplicacion.classList.add("show");
+
+}
+
+
+
+
+
+
 
 // Event listener para items compra
 let items = document.querySelectorAll(".item-compra");
@@ -76,9 +97,9 @@ items.forEach((item) => {
       info.style.display = "flex";
       info.style.left = `${e.x + offsetX}px`;
       info.style.top = `${e.y + offsetY}px`;
-      textoInfo.innerHTML = `<p>${
-        objetoSeleccionado.cargo + " " + objetoSeleccionado.nombre
-      }</p><p>Precio ${objetoSeleccionado.precio}$</p>`;
+      textoInfo.innerHTML = `<h3>${
+        objetoSeleccionado.cargo}</h3><h4> ${objetoSeleccionado.nombre
+      }</h4><p>Precio ${objetoSeleccionado.precio}$</p>`;
     }
   });
 });
@@ -169,6 +190,7 @@ const vaciarCarrito = () => {
   itemArray.forEach(item => {
     item.disponible = true
   });
+  console.log(items)
   textoPrecio.innerHTML = "0 $"
   localStorage.removeItem("carritoArray");
 };

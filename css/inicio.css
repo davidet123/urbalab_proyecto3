@@ -1,0 +1,45 @@
+
+/* Página inicio */
+#web-inicio {
+  display: flex;
+  /* display: none; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../img/daisy.png);
+  font-family: "Comic Sans MS", "Comic Sans";
+  cursor: url("../img/reptar.png"), auto;
+}
+
+.web-inicio-content {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: blue;
+  box-shadow: 20px 20px 20px #ff751a;
+  border-radius: 22px;
+  border: #b3b3b3 20px groove;
+  color: white;
+}
+
+.web-inicio-badges img {
+  padding: 10px;
+  width: 120px;
+}
+
+.web-inicio-action {
+  height: 30px;
+}
+.blink {
+  animation: blinker 0.75s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

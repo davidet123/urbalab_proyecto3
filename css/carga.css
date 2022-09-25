@@ -1,0 +1,49 @@
+
+
+/* Pagina carga */
+
+#loading-screen {
+  display: none;
+  /* display: flex; */
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color:#00ff00;
+}
+
+.caja-carga .encima {
+display: flex;
+align-items: center;
+justify-content: start;
+width: 300px;
+height: 30px;
+}
+
+.barra-carga {
+  width: 100%;
+  height: 30px;background-color: #00ff00;
+}
+
+
+.caja-carga .debajo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 5px;
+  background-color: black;
+  z-index: 40;
+}
+
+.cuadro-carga {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(0, 255, 0);
+}
+
+.porcentaje-carga {
+  padding: 1em;
+}
