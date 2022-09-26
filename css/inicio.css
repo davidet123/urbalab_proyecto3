@@ -1,8 +1,8 @@
 
 /* Página inicio */
 #web-inicio {
-  display: flex;
-  /* display: none; */
+  /* display: flex; */
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;

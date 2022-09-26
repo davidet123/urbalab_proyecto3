@@ -1,10 +1,13 @@
 /* VARIABLES GLOBALES */
 let totalCarrito = 0;
+// let loggedIn = false;
 
 
 // Inicializar datos en la aplicación
 let datosAlmacenados = JSON.parse(localStorage.getItem("carritoArray"))
 let carritoArray = datosAlmacenados ? [...datosAlmacenados] : [];
+
+let loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
 
 carritoArray.forEach(el => {
   totalCarrito += el.precio
@@ -12,8 +15,6 @@ carritoArray.forEach(el => {
 
 let textoPrecio = document.querySelector("#precio-total p")
 textoPrecio.innerHTML = `${totalCarrito} $`
-
-
 
 
 
@@ -32,34 +33,53 @@ let aplicacion = document.getElementById("aplicacion");
 
 // Esconder inicio y mostrar formulario acceso
 
-boton.addEventListener("click", (e) => {
-  e.preventDefault();
-  inicio.classList.add("hide");
-  formulario.classList.add("show");
-});
+const IniciarWeb = () => {
 
-// Esconder formulario y mostrar la aplicación
+  boton.addEventListener("click", (e) => {
+    e.preventDefault();
+    inicio.classList.remove("show");
+    inicio.classList.add("hide");
+    formulario.classList.add("show");
+  });
+  
+  // Esconder formulario y mostrar la aplicación
+  
+  botonEnviar.addEventListener("click", (e) => {
+    e.preventDefault();
+    formulario.classList.remove("show");
+    formulario.classList.add("hide");
+    cargando.classList.add("show");
+    loggedIn = true;
+    localStorage.setItem("loggedIn", JSON.stringify(loggedIn));
+    Carga();
+  });
 
-botonEnviar.addEventListener("click", (e) => {
-  e.preventDefault();
-  formulario.classList.remove("show");
-  formulario.classList.add("hide");
-  cargando.classList.add("show");
-  Carga();
-});
 
-
+};
 
 
 // Abrir Aplicación
 
 const AbrirAplicacion = () => {
+  inicio.classList.remove("show");
   cargando.classList.remove("show");
   cargando.classList.add("hide");
   aplicacion.classList.add("show");
 
 }
 
+
+// Comprobar si el usuario está logueado
+
+if (loggedIn) {
+  inicio.classList.add("hide");
+  formulario.classList.add("hide");
+  cargando.classList.add("show");
+  Carga();
+} else {
+  inicio.classList.add("show");
+  IniciarWeb();
+}
 
 
 
@@ -170,8 +190,8 @@ const soltarItem = (e) => {
 
   /* Añadir precio */ 
 
-  console.log(itemArrastrado)
-  console.log(itemArrastrado.precio)
+  /* console.log(itemArrastrado)
+  console.log(itemArrastrado.precio) */
   totalCarrito += itemArrastrado.precio;
   textoPrecio.innerHTML = `${totalCarrito} $`
   carritoArray.push(itemArrastrado)
@@ -190,7 +210,7 @@ const vaciarCarrito = () => {
   itemArray.forEach(item => {
     item.disponible = true
   });
-  console.log(items)
+  /* console.log(items) */
   textoPrecio.innerHTML = "0 $"
   localStorage.removeItem("carritoArray");
 };

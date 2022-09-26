@@ -1,7 +1,7 @@
 // Seleccionar barra de carga
 
 let barraCarga = document.querySelector(".barra-carga");
-console.log(barraCarga)
+// console.log(barraCarga)
 
 let porcentaje = 0;
 
