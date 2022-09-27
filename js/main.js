@@ -79,4 +79,3 @@ if (loggedIn) {
   inicio.classList.add("show");
   IniciarWeb();
 }
-

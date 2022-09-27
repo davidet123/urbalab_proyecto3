@@ -8,7 +8,7 @@ let porcentaje = 0;
 const Carga = () => {
   setInterval(() => {
   barraCarga.style.width = `${porcentaje}%`
-  if (porcentaje == 100) {
+  if (porcentaje == 1) {
     clearInterval(Carga);
     AbrirAplicacion();
   }
