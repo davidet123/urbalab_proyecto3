@@ -55,7 +55,7 @@ const cargarAplicacion = () => {
          info.style.top = `${e.y + offsetY}px`;
          textoInfo.innerHTML = `<h3>${
            objetoSeleccionado.cargo}</h3><h4> ${objetoSeleccionado.nombre
-         }</h4><p>Precio ${objetoSeleccionado.precio}$</p>`;
+         }</h4><p>Precio ${objetoSeleccionado.precio} KPW</p>`;
        }
      });
    });
@@ -129,12 +129,12 @@ const cargarAplicacion = () => {
    
      /* Añadir precio */ 
    
-     console.log(carritoArray)
+     /* console.log(carritoArray) */
      /* console.log(itemArrastrado.precio) */
      totalCarrito += itemArrastrado.precio;
-     textoPrecio.innerHTML = `${totalCarrito} $`
+     textoPrecio.innerHTML = `${totalCarrito} KPW`
      carritoArray.push(itemArrastrado)
-     console.log(carritoArray)
+     /* console.log(carritoArray) */
      itemArrastrado.disponible = false;
      localStorage.setItem("carritoArray", JSON.stringify(carritoArray));
      bolsillo.src = "img/bolsillo-cerrado.png"
@@ -178,7 +178,7 @@ resetCarrito.addEventListener("click", () => {
   itemArray.forEach(item => {
     item.disponible = true
   });
-  textoPrecio.innerHTML = "0 $"
+  textoPrecio.innerHTML = "0 KPW"
   localStorage.removeItem("carritoArray");
   localStorage.removeItem("itemArray");
   totalCarrito = 0;

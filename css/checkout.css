@@ -20,8 +20,21 @@
   justify-content: space-evenly;
   flex-direction: row;
   width: 100%;
+  border-bottom: 1px dashed rgb(0, 255, 0);
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .checkout-item div {
+  width: 30%;
+}
 
+.checkout-precio {
+  text-align: right;
+}
+
+.checkout-total {
+  font-size: 2em;
+  font-weight: bold;
+  border-bottom: none;
 }

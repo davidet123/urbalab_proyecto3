@@ -13,7 +13,7 @@ carritoArray.forEach(el => {
 })
 
 let textoPrecio = document.querySelector("#precio-total p")
-textoPrecio.innerHTML = `${totalCarrito} $`
+textoPrecio.innerHTML = `${totalCarrito} KPW`
 
 
 
@@ -95,3 +95,20 @@ checkoutCarrito.addEventListener("click", () => {
 
 
 })
+
+const irAplicacion = () => {
+
+
+  checkout.classList.remove("show");
+  checkout.classList.add("hide");
+  aplicacion.classList.remove("hide");
+  aplicacion.classList.add("show");
+
+  let itemsCheckout = document.querySelectorAll(".checkout-item");
+
+  itemsCheckout.forEach(item => {
+    item.remove();
+  })
+
+
+}
