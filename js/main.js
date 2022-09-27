@@ -37,6 +37,8 @@ const IniciarWeb = () => {
   botonInicio.addEventListener("click", (e) => {
     console.log("Inicio")
     e.preventDefault();
+    vid.pause();
+    vid.currentTime = 0;
     inicio.classList.remove("show");
     inicio.classList.add("hide");
     formulario.classList.add("show");
@@ -119,6 +121,14 @@ const finalizar = () => {
   checkout.classList.add("hide");
   inicio.classList.add("show");
   inicio.classList.remove("hide");
+  botonPeligro.classList.remove("hide");
+  botonPeligro.classList.add("show");
+  videoPlayer.classList.remove("show");
+  videoPlayer.classList.add("hide");
+
+
+  loggedIn = false;
+  localStorage.setItem("loggedIn", JSON.stringify(loggedIn));
   IniciarWeb();
 
 }

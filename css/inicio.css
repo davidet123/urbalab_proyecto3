@@ -43,3 +43,32 @@
     opacity: 0;
   }
 }
+#boton-peligro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%
+}
+
+
+#playVideo {
+  background-color: red;
+  color:white;
+  font-size: 4em;
+  border:2px solid white;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  box-shadow: 5px 10px #888888;
+}
+
+#videoPlayer {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#video1 {
+  width: 80%;
+}
