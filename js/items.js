@@ -91,16 +91,14 @@ const url = " https://represent.opennorth.ca/representatives/?limit=15"
 
 const fetchItems = async () => {
   loading = true;
-  // console.log("antes")
   fetch(url)
   .then(res => res.json())
   .then(data => {
     cargarAplicacion(data);
-    // console.log(data.objects)
-    /* cargarAplicacion(); */
-    // console.log("durante")
   })
-  // console.log("despues")
+  .catch(err => {
+    console.log(err)
+  })
 };
 
 /* async function fetchItems () {

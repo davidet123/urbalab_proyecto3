@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/carga.css" />
     <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="css/aplicacion.css" />
+    <link rel="stylesheet" href="css/checkout.css" />
   </head>
   <body>
     <!-- Página inicio -->
@@ -56,7 +57,8 @@
 
     <!-- Aplicación -->
     <div id="aplicacion" class="hide">
-      <div class="titulo">T.O.N.G.O.</div>
+      <div class="titulo">APLICACIÓN</div>
+      <!-- <div class="titulo">T.O.N.G.O.</div> -->
       <!-- Caja información cuando mouseover -->
       <div id="info">
         <p>Pepet</p>
@@ -96,16 +98,26 @@
           </div>
         <!-- <button id="reset" onclick="vaciarCarrito()">RESET</button> -->
         <button id="resetCarrito">RESET</button>
+        <button id="checkoutCarrito">Checkout</button>
         </div>
-
       </div>
-
-
+    </div>
+    <div id="checkout">
+      <div class="titulo">
+        CHECKOUT
+      </div>
+      <div id="checkout-cuerpo">
+        <div class="checkout-item">
+          <div class="checkout-nombre"></div>
+          <div class="checkout-precio"></div>
+        </div>
+      </div>
     </div>
 
     <script src="js/cargando.js"></script>
     <script src="js/items.js"></script>
     <script src="js/aplicacion.js"></script>
+    <script src="js/checkout.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

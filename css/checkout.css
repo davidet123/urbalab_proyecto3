@@ -1,0 +1,11 @@
+#checkout {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  color: rgb(0, 255, 0);
+}
+

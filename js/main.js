@@ -79,3 +79,19 @@ if (loggedIn) {
   inicio.classList.add("show");
   IniciarWeb();
 }
+
+
+// AbrirCheckout
+
+// Seleccionar boton checkout
+let checkoutCarrito = document.getElementById("checkoutCarrito")
+
+checkoutCarrito.addEventListener("click", () => {
+  let checkout = document.getElementById("checkout");
+  aplicacion.classList.remove("show");
+  aplicacion.classList.add("hide");
+  checkout.classList.add("show");
+  checkoutContenedor();
+
+
+})

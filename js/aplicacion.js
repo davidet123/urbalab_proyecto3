@@ -18,19 +18,28 @@ const offsetY = 10;
 
 // Seleccionar carrito
 let carrito = document.getElementById("carrito");
+console.log(carrito)
 
 // Seleccionar bolsillo 
 
 let bolsillo = document.getElementById("bolsillo-img");
+
+// Seleccionar carrito
 let resetCarrito = document.getElementById("resetCarrito");
 
 
-// Mostrar etiqueta info
- fetchItems();
- const cargarAplicacion = data => {
-  console.log(data)
 
 
+
+
+fetchItems(); // Cargar datos
+
+/* Lanzar aplicaión */
+const cargarAplicacion = data => {
+  console.log(data.objects)
+  
+  
+  // Mostrar etiqueta info
    items.forEach((item) => {
    
      item.addEventListener("mouseover", (e) => {
@@ -88,8 +97,7 @@ let resetCarrito = document.getElementById("resetCarrito");
    
    
    // Seleccionar bolsillo para cambiar imagen
-   /* 
-   let bolsillo = document.getElementById("bolsillo-img") */
+   /* let bolsillo = document.getElementById("bolsillo-img") */
    
    
    items.forEach((item) => {
@@ -106,6 +114,8 @@ let resetCarrito = document.getElementById("resetCarrito");
    
    
    bolsillo.addEventListener("dragover", e => e.preventDefault());
+
+
    /* const permitirDrop = (e) => {
      e.preventDefault();
    }; */
@@ -163,7 +173,6 @@ resetCarrito.addEventListener("click", () => {
   itemArray.forEach(item => {
     item.disponible = true
   });
-  /* console.log(items) */
   textoPrecio.innerHTML = "0 $"
   localStorage.removeItem("carritoArray");
   carritoArray = []
@@ -181,3 +190,5 @@ resetCarrito.addEventListener("click", () => {
   textoPrecio.innerHTML = "0 $"
   localStorage.removeItem("carritoArray");
 }; */
+
+
