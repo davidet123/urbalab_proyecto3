@@ -1,6 +1,6 @@
 let datosAlmacenados = JSON.parse(localStorage.getItem("carritoArray"))
 let carritoArray = datosAlmacenados ? [...datosAlmacenados] : [];
-
+let totalCarrito = 0;
 
 
 // Event listener para items compra
@@ -32,11 +32,11 @@ let resetCarrito = document.getElementById("resetCarrito");
 
 
 
-fetchItems(); // Cargar datos
+
 
 /* Lanzar aplicaión */
-const cargarAplicacion = data => {
-  console.log(data.objects)
+const cargarAplicacion = () => {
+  /* console.log(data.objects) */
   
   
   // Mostrar etiqueta info
@@ -162,6 +162,11 @@ const cargarAplicacion = data => {
 
  }
 
+ let datosArray = JSON.parse(localStorage.getItem("itemArray"))
+let itemArray = datosArray ? [...datosArray] : [];
+
+itemArray.length == 0 ? fetchItems() : cargarAplicacion();
+
 
 
 
@@ -175,7 +180,17 @@ resetCarrito.addEventListener("click", () => {
   });
   textoPrecio.innerHTML = "0 $"
   localStorage.removeItem("carritoArray");
-  carritoArray = []
+  localStorage.removeItem("itemArray");
+  totalCarrito = 0;
+  carritoArray = [];
+  itemArray = [];
+
+  items.forEach(item => {
+    item.remove();
+  })
+
+
+  fetchItems();
 });
 
 

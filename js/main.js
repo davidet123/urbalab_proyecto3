@@ -1,5 +1,5 @@
 /* VARIABLES GLOBALES */
-let totalCarrito = 0;
+/* let totalCarrito = 0; */
 // let loggedIn = false;
 
 
