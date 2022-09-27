@@ -20,7 +20,7 @@ textoPrecio.innerHTML = `${totalCarrito} KPW`
 // Funcionalidad pasar páginas
 
 // Botones
-const boton = document.getElementById("boton1");
+const botonInicio = document.getElementById("botonInicio");
 const botonEnviar = document.getElementById("enviarForm");
 
 // Referencias a contenedor de cada página
@@ -34,7 +34,8 @@ let aplicacion = document.getElementById("aplicacion");
 
 const IniciarWeb = () => {
 
-  boton.addEventListener("click", (e) => {
+  botonInicio.addEventListener("click", (e) => {
+    console.log("Inicio")
     e.preventDefault();
     inicio.classList.remove("show");
     inicio.classList.add("hide");
@@ -60,6 +61,7 @@ const IniciarWeb = () => {
 // Abrir Aplicación
 
 const AbrirAplicacion = () => {
+
   inicio.classList.remove("show");
   cargando.classList.remove("show");
   cargando.classList.add("hide");
@@ -110,5 +112,13 @@ const irAplicacion = () => {
     item.remove();
   })
 
+}
+
+const finalizar = () => {
+  checkout.classList.remove("show");
+  checkout.classList.add("hide");
+  inicio.classList.add("show");
+  inicio.classList.remove("hide");
+  IniciarWeb();
 
 }

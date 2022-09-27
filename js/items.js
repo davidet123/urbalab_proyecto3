@@ -119,6 +119,8 @@ const url = " https://represent.opennorth.ca/representatives/?limit=15"
 /* let datosArray = JSON.parse(localStorage.getItem("itemArray"))
 let itemArray = datosArray ? [...datosArray] : []; */
 
+let aplicacionCargada = false;
+
 
 const fetchItems = async () => {
     let res = await fetch(url)
@@ -136,7 +138,7 @@ const fetchItems = async () => {
       })
     });   
     localStorage.setItem("itemArray", JSON.stringify(itemArray));
-
+    
   cargarAplicacion();
 }
 

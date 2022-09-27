@@ -92,6 +92,7 @@ const cargarAplicacion = () => {
      }
      posicion++;
    });
+  }
    
    /* DRAG & DROP */
    
@@ -129,12 +130,10 @@ const cargarAplicacion = () => {
    
      /* Añadir precio */ 
    
-     /* console.log(carritoArray) */
-     /* console.log(itemArrastrado.precio) */
+     console.log("drop")
      totalCarrito += itemArrastrado.precio;
      textoPrecio.innerHTML = `${totalCarrito} KPW`
      carritoArray.push(itemArrastrado)
-     /* console.log(carritoArray) */
      itemArrastrado.disponible = false;
      localStorage.setItem("carritoArray", JSON.stringify(carritoArray));
      bolsillo.src = "img/bolsillo-cerrado.png"
@@ -160,7 +159,7 @@ const cargarAplicacion = () => {
    
    // Vaciar carrito
 
- }
+ 
 
  let datosArray = JSON.parse(localStorage.getItem("itemArray"))
 let itemArray = datosArray ? [...datosArray] : [];
