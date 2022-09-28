@@ -18,7 +18,6 @@ const offsetY = 10;
 
 // Seleccionar carrito
 let carrito = document.getElementById("carrito");
-console.log(carrito)
 
 // Seleccionar bolsillo 
 
@@ -168,10 +167,11 @@ itemArray.length == 0 ? fetchItems() : cargarAplicacion();
 
 
 
-
-resetCarrito.addEventListener("click", () => {
+let reset = () => {
   let items = document.querySelectorAll(".item-compra img");
+  console.log(items)
   items.forEach((item) => {
+    console.log("deleteitem")
     item.removeAttribute("style");
   });
   itemArray.forEach(item => {
@@ -187,10 +187,14 @@ resetCarrito.addEventListener("click", () => {
   items.forEach(item => {
     item.remove();
   })
+  console.log(items)
 
 
   fetchItems();
-});
+};
+
+
+resetCarrito.addEventListener("click", reset);
 
 
 /* const vaciarCarrito = () => {

@@ -100,6 +100,13 @@ checkoutCarrito.addEventListener("click", () => {
 
 })
 
+
+// Seleccionar boton volvar a la aplicacion
+let volverAplicacion = document.getElementById("volver");
+
+
+
+
 const irAplicacion = () => {
 
 
@@ -113,10 +120,16 @@ const irAplicacion = () => {
   itemsCheckout.forEach(item => {
     item.remove();
   })
-
 }
 
+volverAplicacion.addEventListener("click", irAplicacion);
+
 const finalizar = () => {
+  reset();
+  let itemsCheckout = document.querySelectorAll(".checkout-item");
+  itemsCheckout.forEach(item => {
+    item.remove();
+  })
   checkout.classList.remove("show");
   checkout.classList.add("hide");
   inicio.classList.add("show");
@@ -129,6 +142,12 @@ const finalizar = () => {
 
   loggedIn = false;
   localStorage.setItem("loggedIn", JSON.stringify(loggedIn));
+  
   IniciarWeb();
 
 }
+
+// Seleccionar boton finalizar
+let acabar = document.getElementById("finalizar");
+
+acabar.addEventListener("click", finalizar);

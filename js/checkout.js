@@ -3,6 +3,7 @@
 
 
 let checkoutContenedor = () => {
+  console.log(carritoArray)
   carritoArray.forEach(item => {
     nuevoItem(item.nombre, item.precio)
   })
