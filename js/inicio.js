@@ -19,8 +19,8 @@ let bubble = document.getElementById("bubble");
 let posX = window.innerWidth / 2;
 let posY = window.innerHeight / 2;
 
-let incX = 5;
-let incY = 5;
+let incX = 3;
+let incY = 3;
 
 const bubbleMove = () => {
 setInterval(() => {

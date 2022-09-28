@@ -129,7 +129,6 @@ const cargarAplicacion = () => {
    
      /* Añadir precio */ 
    
-     console.log("drop")
      totalCarrito += itemArrastrado.precio;
      textoPrecio.innerHTML = `${totalCarrito} KPW`
      carritoArray.push(itemArrastrado)
@@ -169,9 +168,7 @@ itemArray.length == 0 ? fetchItems() : cargarAplicacion();
 
 let reset = () => {
   let items = document.querySelectorAll(".item-compra img");
-  console.log(items)
   items.forEach((item) => {
-    console.log("deleteitem")
     item.removeAttribute("style");
   });
   itemArray.forEach(item => {
@@ -187,7 +184,6 @@ let reset = () => {
   items.forEach(item => {
     item.remove();
   })
-  console.log(items)
 
 
   fetchItems();

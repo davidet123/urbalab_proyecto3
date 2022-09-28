@@ -1,7 +1,7 @@
 #checkout {
   display: none;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
@@ -10,7 +10,9 @@
 }
 #checkout-cuerpo {
   width: 60%;
+  margin-top: 4em;
 }
+
 
 
 

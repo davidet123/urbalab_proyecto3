@@ -35,7 +35,6 @@ let aplicacion = document.getElementById("aplicacion");
 const IniciarWeb = () => {
 
   bubble.addEventListener("click", (e) => {
-    console.log("Inicio")
     e.preventDefault();
     vid.pause();
     vid.currentTime = 0;
