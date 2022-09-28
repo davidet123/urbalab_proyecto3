@@ -43,6 +43,24 @@
     opacity: 0;
   }
 }
+
+#bubble {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  /* top: 0px;
+  left: 30px; */
+  /* background-color: red; */
+  background-image: url(../img/bubble.png);
+  /* background-image: url(../img/netscape\ badge.png);  */
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  z-index: 100;
+}
+
+
+
 #boton-peligro {
   display: flex;
   align-items: center;

@@ -20,7 +20,7 @@ textoPrecio.innerHTML = `${totalCarrito} KPW`
 // Funcionalidad pasar páginas
 
 // Botones
-const botonInicio = document.getElementById("botonInicio");
+/* const botonInicio = document.getElementById("botonInicio"); */
 const botonEnviar = document.getElementById("enviarForm");
 
 // Referencias a contenedor de cada página
@@ -34,7 +34,7 @@ let aplicacion = document.getElementById("aplicacion");
 
 const IniciarWeb = () => {
 
-  botonInicio.addEventListener("click", (e) => {
+  bubble.addEventListener("click", (e) => {
     console.log("Inicio")
     e.preventDefault();
     vid.pause();
