@@ -1,7 +1,5 @@
 // Seleccionar contenedor del checkout
 
-
-
 let checkoutContenedor = () => {
   carritoArray.forEach(item => {
     nuevoItem(item.nombre, item.precio)
@@ -10,6 +8,8 @@ let checkoutContenedor = () => {
 
   
 }
+
+// Añadir elementos del carrito al DOM
 
 const nuevoItem = (nombre, precio) => {
   let cuerpo = document.getElementById("checkout-cuerpo");
@@ -34,12 +34,3 @@ const nuevoItem = (nombre, precio) => {
 
 }
 
-
-
-
-
-
-/* <div class="checkout-item">
-          <div class="checkout-nombre"></div>
-          <div class="checkout-precio"></div>
-        </div> */

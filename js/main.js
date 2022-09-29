@@ -103,9 +103,6 @@ checkoutCarrito.addEventListener("click", () => {
 // Seleccionar boton volvar a la aplicacion
 let volverAplicacion = document.getElementById("volver");
 
-
-
-
 const irAplicacion = () => {
 
 
@@ -122,6 +119,9 @@ const irAplicacion = () => {
 }
 
 volverAplicacion.addEventListener("click", irAplicacion);
+
+
+// Checkout
 
 const finalizar = () => {
   reset();

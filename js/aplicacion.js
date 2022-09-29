@@ -28,14 +28,8 @@ let resetCarrito = document.getElementById("resetCarrito");
 
 
 
-
-
-
-
-
 /* Lanzar aplicaión */
 const cargarAplicacion = () => {
-  /* console.log(data.objects) */
   
   
   // Mostrar etiqueta info
@@ -97,16 +91,12 @@ const cargarAplicacion = () => {
    
    
    // Seleccionar bolsillo para cambiar imagen
-   /* let bolsillo = document.getElementById("bolsillo-img") */
    
    
    items.forEach((item) => {
      item.addEventListener("dragstart", (e) => {
        info.style.display = "none";
        e.dataTransfer.setData("text", e.target.id);
-       /* elemento = document.getElementById(e.target.id); */
-       /* elemento.style.display="none" */
-       /* elemento.style.visibility="hidden" */
        bolsillo.src = "img/bolsillo-abierto.png"
    
      });
@@ -115,11 +105,6 @@ const cargarAplicacion = () => {
    
    bolsillo.addEventListener("dragover", e => e.preventDefault());
 
-
-   /* const permitirDrop = (e) => {
-     e.preventDefault();
-   }; */
-   
    
    bolsillo.addEventListener("drop", e => {
      e.preventDefault();
@@ -136,35 +121,14 @@ const cargarAplicacion = () => {
      localStorage.setItem("carritoArray", JSON.stringify(carritoArray));
      bolsillo.src = "img/bolsillo-cerrado.png"
    });
-   
-   /* const soltarItem = (e) => {
-     e.preventDefault();
-     let item = e.dataTransfer.getData("text");
-     document.getElementById(item).style.visibility = "hidden";
-     let itemArrastrado = itemArray.find((e) => (e.id == item)); */
-   
-     /* Añadir precio */ 
-   
-     /* console.log(itemArrastrado)
-     console.log(itemArrastrado.precio) */
-    /*  totalCarrito += itemArrastrado.precio;
-     textoPrecio.innerHTML = `${totalCarrito} $`
-     carritoArray.push(itemArrastrado)
-     itemArrastrado.disponible = false;
-     localStorage.setItem("carritoArray", JSON.stringify(carritoArray));
-     bolsillo.src = "img/bolsillo-cerrado.png"
-   }; */
-   
-   // Vaciar carrito
 
- 
 
- let datosArray = JSON.parse(localStorage.getItem("itemArray"))
+let datosArray = JSON.parse(localStorage.getItem("itemArray"))
 let itemArray = datosArray ? [...datosArray] : [];
 
 itemArray.length == 0 ? fetchItems() : cargarAplicacion();
 
-
+// Resetear carrito
 
 let reset = () => {
   let items = document.querySelectorAll(".item-compra img");
@@ -191,18 +155,5 @@ let reset = () => {
 
 
 resetCarrito.addEventListener("click", reset);
-
-
-/* const vaciarCarrito = () => {
-  let items = document.querySelectorAll(".item-compra img");
-  items.forEach((item) => {
-    item.removeAttribute("style");
-  });
-  itemArray.forEach(item => {
-    item.disponible = true
-  });
-  textoPrecio.innerHTML = "0 $"
-  localStorage.removeItem("carritoArray");
-}; */
 
 
